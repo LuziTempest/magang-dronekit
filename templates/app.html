@@ -10,8 +10,7 @@
         <h1>Halo, Welcome Rimuru!</h1>
         <nav>
             <a href="/get_all_params">Get All Params</a> | 
-            <a href="/plane_status">Status</a> | 
-            <a href="/plane_info">Info</a>  
+            <a href="/plane_status">Status</a>
         </nav>
     </header>
 
@@ -20,10 +19,6 @@
     <section id="mission-control">
         <h3>Mission Planning</h3>
         <form action="/wp" method="post">
-            <label for="jarak_lat">Jarak Lat (meter):</label>
-            <input type="number" id="jarak_lat" name="jarak_lat">
-            <label for="jarak_lon">Jarak Lon (meter):</label>
-            <input type="number" id="jarak_lon" name="jarak_lon">
             <button type="submit">Generate WP</button>
         </form>
     </section>
@@ -31,13 +26,6 @@
     <hr>
 
     <section id="vehicle-status">
-        <div id="mode-control">
-            <p><strong>Vehicle Mode:</strong> {{ mode if mode else "None" }}</p>
-            <form action="/switch" method="post">
-                <button type="submit">Ganti Mode</button>
-            </form>
-        </div>
-
         <div id="arm-control">
             <p><strong>Vehicle Status:</strong> {{ "Armed" if arm else "Disarmed" }}</p>
             <form action="/arm" method="post">
@@ -57,16 +45,6 @@
                 <div>
                     <label for="param1">Min Acc:</label>
                     <input type="text" id="param1" name="min_acc" value="{{ param1 if param1 != None else '' }}">
-                </div>
-                
-                <div>
-                    <label for="param2">Min Speed:</label>
-                    <input type="text" id="param2" name="min_spd" value="{{ param2 if param2 != None else '' }}">
-                </div>
-                
-                <div>
-                    <label for="param3">Timeout:</label>
-                    <input type="text" id="param3" name="timeout" value="{{ param3 if param3 != None else '' }}">
                 </div>
                 
                 <br>
