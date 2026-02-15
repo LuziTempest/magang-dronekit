@@ -31,6 +31,10 @@
             <form action="/arm" method="post">
                 <button type="submit">{{ "Disarm" if arm else "Arm" }}</button>
             </form>
+            <p><strong>Vehicle Mode:</strong> {{ mode }}</p>
+            <form action="/switch" method="post">
+                <button type="submit">Switch</button>
+            </form>
         </div>
     </section>
 
